@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+
+  likwalpost:
+    image: wordpress
+    restart: unless-stopped
+    # ports:
+    #   - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: localhost
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: root
+      WORDPRESS_DB_NAME: likwalpost
+    volumes:
+      - data:/var/www/html
+
+volumes:
+  data:
+
+networks:
+  default:
+    external:
+      name: main
