@@ -3,6 +3,7 @@ version: '3.1'
 services:
 
   likwalpost:
+    container_name: likwalpost
     image: wordpress
     restart: unless-stopped
     # ports:
